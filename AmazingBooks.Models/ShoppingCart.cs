@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AmazingBooks.Models {
-    public class ShoppingCart {
+    public class ShoppingCart
+    {
         public int Id { get; set; }
 
         public int ProductId { get; set; }
@@ -23,7 +24,7 @@ namespace AmazingBooks.Models {
         [ValidateNever]
         public ApplicationUser ApplicationUser { get; set; }
 
-		[NotMapped]
-		public double Price { get; set; }
-	}
+        [NotMapped]
+        public double Price { get; set; }
+    }
 }

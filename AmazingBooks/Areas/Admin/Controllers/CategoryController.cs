@@ -1,10 +1,14 @@
 ﻿using AmazingBooks.DataAccess.Repository.IRepository;
+using AmazingBooks.DataAccess.Data;
 using AmazingBooks.Models;
+using AmazingBooks.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AmazingBooks.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    //[Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

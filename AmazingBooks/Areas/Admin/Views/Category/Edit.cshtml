@@ -12,7 +12,7 @@
             <input asp-for="Id" hidden />
             <div class="border p-3 mt-4">
                 @*<div asp-validation-summary="ModelOnly"></div>*@
-                <div class="form-floating py-2 col-12">
+               <div class="form-floating py-2 col-12">
                     <input asp-for="Name" class="form-control border-0 shadow" />
                     <label asp-for="Name" class="ms-2"></label>
                     <span asp-validation-for="Name" class="text-danger"></span>
@@ -41,8 +41,8 @@
 </div>
 
 
-@section Scripts {
+@section Scripts{
     @{
-        <partial name="_ValidationScriptsPartial" />
+        <partial name="_ValidationScriptsPartial"/>
     }
 }

@@ -1,12 +1,18 @@
 ﻿using AmazingBooks.DataAccess.Repository.IRepository;
-using AmazingBooks.Models.ViewModels;
+using AmazingBooks.DataAccess.Data;
 using AmazingBooks.Models;
+using AmazingBooks.Models.ViewModels;
+using AmazingBooks.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.Data;
 
 namespace AmazingBooks.Areas.Admin.Controllers
 {
     [Area("Admin")]
+   // [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -16,10 +22,10 @@ namespace AmazingBooks.Areas.Admin.Controllers
             _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
         }
-        public IActionResult Index()
+        public IActionResult Index() 
         {
-            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
-
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
+           
             return View(objProductList);
         }
 
@@ -42,10 +48,10 @@ namespace AmazingBooks.Areas.Admin.Controllers
             else
             {
                 //update
-                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
+                productVM.Product = _unitOfWork.Product.Get(u=>u.Id==id);
                 return View(productVM);
             }
-
+            
         }
         [HttpPost]
         public IActionResult Upsert(ProductVM productVM, IFormFile? file)
@@ -61,7 +67,7 @@ namespace AmazingBooks.Areas.Admin.Controllers
                     if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
                         //delete the old image
-                        var oldImagePath =
+                        var oldImagePath = 
                             Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
 
                         if (System.IO.File.Exists(oldImagePath))
@@ -70,7 +76,7 @@ namespace AmazingBooks.Areas.Admin.Controllers
                         }
                     }
 
-                    using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+                    using (var fileStream = new FileStream(Path.Combine(productPath, fileName),FileMode.Create))
                     {
                         file.CopyTo(fileStream);
                     }
@@ -86,7 +92,7 @@ namespace AmazingBooks.Areas.Admin.Controllers
                 {
                     _unitOfWork.Product.Update(productVM.Product);
                 }
-
+                
                 _unitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
@@ -123,7 +129,7 @@ namespace AmazingBooks.Areas.Admin.Controllers
             }
 
             var oldImagePath =
-                           Path.Combine(_webHostEnvironment.WebRootPath,
+                           Path.Combine(_webHostEnvironment.WebRootPath, 
                            productToBeDeleted.ImageUrl.TrimStart('\\'));
 
             if (System.IO.File.Exists(oldImagePath))

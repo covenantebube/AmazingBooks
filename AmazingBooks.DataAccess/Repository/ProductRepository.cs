@@ -1,5 +1,5 @@
-﻿using AmazingBooks.DataAccess.Data;
-using AmazingBooks.DataAccess.Repository.IRepository;
+﻿using AmazingBooks.DataAccess.Repository.IRepository;
+using AmazingBooks.DataAccess.Data;
 using AmazingBooks.Models;
 using System;
 using System.Collections.Generic;
