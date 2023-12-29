@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AmazingBooks.Models {
-    public class OrderHeader {
+    public class OrderHeader
+    {
 
 
         public int Id { get; set; }

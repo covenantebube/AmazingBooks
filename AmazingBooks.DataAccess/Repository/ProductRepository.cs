@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace AmazingBooks.DataAccess.Repository
 {
@@ -18,7 +19,7 @@ namespace AmazingBooks.DataAccess.Repository
             _db = db;
         }
 
-        
+
 
         public void Update(Product obj)
         {
@@ -34,11 +35,34 @@ namespace AmazingBooks.DataAccess.Repository
                 objFromDb.Description = obj.Description;
                 objFromDb.CategoryId = obj.CategoryId;
                 objFromDb.Author = obj.Author;
-                if (obj.ImageUrl != null)
-                {
-                    objFromDb.ImageUrl = obj.ImageUrl;
-                }
+                objFromDb.ProductImages = obj.ProductImages;
+                //if (obj.ImageUrl != null)
+                //{
+                //    objFromDb.ImageUrl = obj.ImageUrl;
+                //}
             }
         }
+
+        public IEnumerable<Product> SearchProducts(string searchTerm, string? includeProperties = null)
+        {
+            IQueryable<Product> query = _db.Products;
+
+            query = query.Where(p => p.Title.Contains(searchTerm) ||
+                                     p.Category.Name.Contains(searchTerm) ||
+                                     p.Author.Contains(searchTerm));
+
+          
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var includeProp in includeProperties
+                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
+
+            return query.ToList();
+        }
+
     }
 }

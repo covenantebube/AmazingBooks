@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AmazingBooks.Models {
-    public class Company {
+    public class Company
+    {
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }

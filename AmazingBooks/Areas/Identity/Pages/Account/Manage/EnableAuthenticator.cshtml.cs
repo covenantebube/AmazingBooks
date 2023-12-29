@@ -178,7 +178,7 @@ namespace AmazingBooks.Areas.Identity.Pages.Account.Manage
         private string GenerateQrCodeUri(string email, string unformattedKey)
         {
             return string.Format(
-                CultureInfo.InvariantCulture,
+                "$",
                 AuthenticatorUriFormat,
                 _urlEncoder.Encode("Microsoft.AspNetCore.Identity.UI"),
                 _urlEncoder.Encode(email),

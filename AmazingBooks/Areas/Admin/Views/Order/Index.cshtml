@@ -6,7 +6,8 @@
     var approved = "text-primary";
     var all = "text-primary";
 
-    switch (status) {
+    switch (status)
+    {
         case "pending":
             pending = "active text-white bg-primary";
             break;
@@ -41,7 +42,7 @@
             <span></span>
             <ul class="list-group list-group-horizontal-sm">
                 <a style="text-decoration:none;" asp-controller="Order" asp-action="Index" asp-route-status="inprocess">
-                    <li class="list-group-item @inprocess">In Process</li>
+                <li class="list-group-item @inprocess">In Process</li>
                 </a>
                 <a style="text-decoration:none;" asp-controller="Order" asp-action="Index" asp-route-status="pending">
                 <li class="list-group-item @pending">Payment Pending</li>
@@ -74,6 +75,6 @@
     </div>
 </div>
 
-@section Scripts{
+@section Scripts {
     <script src="~/js/order.js"></script>
 }
