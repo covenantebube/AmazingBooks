@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AmazingBooks.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231227113637_final")]
-    partial class final
+    [Migration("20231229144924_final2")]
+    partial class final2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,19 +50,19 @@ namespace AmazingBooks.DataAccess.Migrations
                         {
                             Id = 1,
                             DisplayOrder = 1,
-                            Name = "Action"
+                            Name = "Fiction"
                         },
                         new
                         {
                             Id = 2,
                             DisplayOrder = 2,
-                            Name = "SciFi"
+                            Name = "Self Help"
                         },
                         new
                         {
                             Id = 3,
                             DisplayOrder = 3,
-                            Name = "History"
+                            Name = "Science"
                         });
                 });
 
@@ -284,80 +284,210 @@ namespace AmazingBooks.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Author = "Billy Spark",
+                            Author = "Chimamanda Ngozi Adichie",
                             CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "SWD9999001",
+                            Description = "Purple Hibiscus' by Chimamanda Ngozi Adichie follows the lives of Kambili and her brother Jaja in privileged yet oppressive Nigeria. Sheltered by their fanatically religious father, they escape to their aunt during a military coup, discovering a world beyond their father's control. The novel explores adolescence, family bonds, and the pursuit of freedom amidst political turmoil. Adichie's poignant narrative unveils the silent struggles behind their seemingly perfect life, emphasizing the strength needed to confront familial tensions and embrace newfound possibilities. 'Purple Hibiscus' is a powerful exploration of resilience and liberation in the face of familial oppression.",
+                            ISBN = "9781616202415",
                             ListPrice = 99.0,
                             Price = 90.0,
                             Price100 = 80.0,
                             Price50 = 85.0,
-                            Title = "Fortune of Time"
+                            Title = "Purple Hibiscus"
                         },
                         new
                         {
                             Id = 2,
-                            Author = "Nancy Hoover",
+                            Author = "Chinua Achebe",
                             CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "CAW777777701",
-                            ListPrice = 40.0,
-                            Price = 30.0,
-                            Price100 = 20.0,
-                            Price50 = 25.0,
-                            Title = "Dark Skies"
+                            Description = "\"Things Fall Apart\" by Chinua Achebe is a classic novel that explores the impact of colonialism on traditional African societies. Through the story of Okonkwo, a proud Igbo warrior, Achebe vividly portrays the cultural clash and the devastating consequences of European influence. This compelling narrative reflects on the complexities of change, tradition, and the resilience of the human spirit.",
+                            ISBN = "9780385474542",
+                            ListPrice = 22.989999999999998,
+                            Price = 19.989999999999998,
+                            Price100 = 17.989999999999998,
+                            Price50 = 18.989999999999998,
+                            Title = "Things Fall Apart"
                         },
                         new
                         {
                             Id = 3,
-                            Author = "Julian Button",
-                            CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "RITO5555501",
-                            ListPrice = 55.0,
-                            Price = 50.0,
-                            Price100 = 35.0,
-                            Price50 = 40.0,
-                            Title = "Vanish in the Sunset"
+                            Author = "Stephen Hawking",
+                            CategoryId = 3,
+                            Description = "<p>A Brief History of Time\" by Stephen Hawking is a groundbreaking exploration of the universe, delving into complex scientific concepts with clarity and wit. From the Big Bang to black holes, Hawking takes readers on a journey through the cosmos, unraveling the mysteries of space and time. This science classic continues to captivate audiences, offering a profound understanding of the universe and our place within it.</p>",
+                            ISBN = "9780553380163",
+                            ListPrice = 24.949999999999999,
+                            Price = 21.989999999999998,
+                            Price100 = 19.989999999999998,
+                            Price50 = 20.989999999999998,
+                            Title = "A Brief History of Time"
                         },
                         new
                         {
                             Id = 4,
-                            Author = "Abby Muscles",
-                            CategoryId = 2,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "WS3333333301",
-                            ListPrice = 70.0,
-                            Price = 65.0,
-                            Price100 = 55.0,
-                            Price50 = 60.0,
-                            Title = "Cotton Candy"
+                            Author = "Harper Lee",
+                            CategoryId = 1,
+                            Description = "<p>\"To Kill a Mockingbird\" by Harper Lee is a timeless work of fiction that explores issues of racial injustice and moral growth in the American South. Set during the Great Depression, the novel follows the coming-of-age story of Scout Finch as her father, Atticus Finch, defends an innocent black man accused of rape. Lee's masterpiece is a powerful narrative that addresses themes of compassion, empathy, and the complexities of human nature.</p>",
+                            ISBN = "9780061120084",
+                            ListPrice = 17.989999999999998,
+                            Price = 15.99,
+                            Price100 = 13.99,
+                            Price50 = 14.99,
+                            Title = "To Kill a Mockingbird"
                         },
                         new
                         {
                             Id = 5,
-                            Author = "Ron Parker",
+                            Author = "Carol S. Dweck",
                             CategoryId = 2,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "SOTJ1111111101",
-                            ListPrice = 30.0,
-                            Price = 27.0,
-                            Price100 = 20.0,
-                            Price50 = 25.0,
-                            Title = "Rock in the Ocean"
+                            Description = "<p>\"Mindset: The New Psychology of Success\" by Carol S. Dweck explores the power of mindset in shaping success. Dweck introduces the concepts of fixed and growth mindsets, illustrating how beliefs about one's abilities impact achievement. Filled with research and anecdotes, this self-help classic provides insights into fostering resilience, learning, and achieving one's full potential.</p>",
+                            ISBN = "9780345472328",
+                            ListPrice = 16.989999999999998,
+                            Price = 14.99,
+                            Price100 = 12.99,
+                            Price50 = 13.99,
+                            Title = "Mindset"
                         },
                         new
                         {
                             Id = 6,
-                            Author = "Laura Phantom",
+                            Author = "James Clear",
+                            CategoryId = 2,
+                            Description = "<p>\"Atomic Habits\" by James Clear is a transformative guide to building good habits and breaking bad ones. Clear delves into the science of habits, offering practical strategies to make tiny changes that lead to remarkable results. This self-help bestseller empowers readers to understand the mechanics of behavior and cultivate habits that align with their goals, leading to positive, lasting change.</p>",
+                            ISBN = "9780735211292",
+                            ListPrice = 27.0,
+                            Price = 23.989999999999998,
+                            Price100 = 21.989999999999998,
+                            Price50 = 22.989999999999998,
+                            Title = "Atomic Habits"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Author = "James D. Watson",
                             CategoryId = 3,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "FOT000000001",
-                            ListPrice = 25.0,
-                            Price = 23.0,
-                            Price100 = 20.0,
-                            Price50 = 22.0,
-                            Title = "Leaves and Wonders"
+                            Description = "<p>\"The Double Helix\" by James D. Watson is a riveting account of the discovery of the structure of DNA. Watson, alongside Francis Crick and Maurice Wilkins, unravels the mystery of the double helix, marking a pivotal moment in the history of science. This groundbreaking work provides insights into the competitive and collaborative nature of scientific discovery.</p>",
+                            ISBN = "9780743216302",
+                            ListPrice = 18.949999999999999,
+                            Price = 16.989999999999998,
+                            Price100 = 14.99,
+                            Price50 = 15.99,
+                            Title = "The Double Helix"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Author = "J.D. Salinger",
+                            CategoryId = 1,
+                            Description = "<p>\"The Catcher in the Rye\" by J.D. Salinger is a classic novel narrated by Holden Caulfield, a disenchanted teenager navigating the complexities of adolescence. The story provides a poignant exploration of alienation, identity, and societal expectations, making it a timeless coming-of-age tale.</p>",
+                            ISBN = "9780241950425",
+                            ListPrice = 19.989999999999998,
+                            Price = 17.989999999999998,
+                            Price100 = 15.99,
+                            Price50 = 16.989999999999998,
+                            Title = "The Catcher in the Rye"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Author = "Jen Sincero",
+                            CategoryId = 2,
+                            Description = "<p>\"You Are a Badass\" by Jen Sincero is a motivational self-help book that encourages readers to embrace their inner awesomeness and live life to the fullest. With humor and practical advice, Sincero inspires personal development and empowers individuals to overcome challenges and achieve their goals.</p>",
+                            ISBN = "9780762447695",
+                            ListPrice = 21.949999999999999,
+                            Price = 19.989999999999998,
+                            Price100 = 17.989999999999998,
+                            Price50 = 18.989999999999998,
+                            Title = "You Are a Badass"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Author = "Yuval Noah Harari",
+                            CategoryId = 3,
+                            Description = "<p>\"Sapiens: A Brief History of Humankind\" by Yuval Noah Harari provides a compelling overview of the evolution of Homo sapiens. Harari explores the cognitive, agricultural, and scientific revolutions, offering insights into the collective journey of humanity.</p>",
+                            ISBN = "9780062316110",
+                            ListPrice = 24.989999999999998,
+                            Price = 21.989999999999998,
+                            Price100 = 19.989999999999998,
+                            Price50 = 20.989999999999998,
+                            Title = "Sapiens"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Author = "George Orwell",
+                            CategoryId = 1,
+                            Description = "<p>\"1984\" by George Orwell is a dystopian novel that explores the consequences of a totalitarian society. Orwell's portrayal of a surveillance state and the suppression of individuality remains a powerful commentary on political control and the impact of propaganda.</p>",
+                            ISBN = "9780451524935",
+                            ListPrice = 16.989999999999998,
+                            Price = 14.99,
+                            Price100 = 12.99,
+                            Price50 = 13.99,
+                            Title = "1984"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Author = "Eckhart Tolle",
+                            CategoryId = 2,
+                            Description = "<p>\"The Power of Now\" by Eckhart Tolle is a spiritual guide that emphasizes the importance of living in the present moment. Tolle explores the concept of mindfulness and offers practical teachings to achieve inner peace and enlightenment.</p>",
+                            ISBN = "9781577314806",
+                            ListPrice = 23.0,
+                            Price = 19.989999999999998,
+                            Price100 = 17.989999999999998,
+                            Price50 = 18.989999999999998,
+                            Title = "The Power of Now"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Author = "Carl Sagan",
+                            CategoryId = 3,
+                            Description = "<p>\"Cosmos\" by Carl Sagan is a captivating exploration of the universe. Sagan combines science and philosophy to convey the wonders of space and the significance of human exploration. This classic work continues to inspire awe and curiosity about the cosmos.</p>",
+                            ISBN = "9780345539434",
+                            ListPrice = 30.0,
+                            Price = 26.989999999999998,
+                            Price100 = 24.989999999999998,
+                            Price50 = 25.989999999999998,
+                            Title = "Cosmos"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Author = "J.R.R. Tolkien",
+                            CategoryId = 1,
+                            Description = "<p>\"The Lord of the Rings\" by J.R.R. Tolkien is an epic fantasy trilogy that follows the journey of Frodo Baggins to destroy the One Ring. Tolkien's rich world-building and intricate storytelling have made this series a literary masterpiece and a beloved classic.</p>",
+                            ISBN = "9780618640157",
+                            ListPrice = 45.0,
+                            Price = 39.990000000000002,
+                            Price100 = 37.990000000000002,
+                            Price50 = 38.990000000000002,
+                            Title = "The Lord of the Rings"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Author = "Richard Dawkins",
+                            CategoryId = 3,
+                            Description = "<p>\"The Selfish Gene\" by Richard Dawkins explores the gene's-eye view of evolution, presenting a groundbreaking perspective on natural selection. Dawkins elucidates the concept of genes as replicators, shaping the behavior of living organisms in the struggle for survival.</p>",
+                            ISBN = "9780198788607",
+                            ListPrice = 19.949999999999999,
+                            Price = 17.989999999999998,
+                            Price100 = 15.99,
+                            Price50 = 16.989999999999998,
+                            Title = "The Selfish Gene"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Author = "Jane Austen",
+                            CategoryId = 1,
+                            Description = "<p>\"Pride and Prejudice\" by Jane Austen is a classic novel that explores themes of love, class, and societal expectations. Austen's witty commentary and engaging characters make this timeless work a cornerstone of English literature.</p>",
+                            ISBN = "9780141439518",
+                            ListPrice = 18.0,
+                            Price = 15.99,
+                            Price100 = 13.99,
+                            Price50 = 14.99,
+                            Title = "Pride and Prejudice"
                         });
                 });
 
@@ -381,6 +511,110 @@ namespace AmazingBooks.DataAccess.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ImageUrl = "\\images\\products\\product-1\\d52714a8-c5f1-437d-b7da-27ea6fe65fdb.webp",
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ImageUrl = "\\images\\products\\product-2\\96e9e1f1-1b0e-4fb9-8743-0c722a68027a.webp",
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ImageUrl = "\\images\\products\\product-3\\d4fe26be-0d50-4975-9cfd-deec5040797c.jpg",
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ImageUrl = "\\images\\products\\product-4\\66fb28ad-0d50-4820-93c2-eeed6aefbca4.jpg",
+                            ProductId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ImageUrl = "\\images\\products\\product-5\\352fc0f4-76a8-4d33-9ee4-cd4d0056405a.jpg",
+                            ProductId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ImageUrl = "\\images\\products\\product-6\\aebed5b4-6f74-4341-834c-7f19246ce03c.webp",
+                            ProductId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ImageUrl = "\\images\\products\\product-7\\72b10554-9bc2-44d5-9b78-01958746f6ec.jpg",
+                            ProductId = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ImageUrl = "\\images\\products\\product-8\\115fc1c8-bb4c-4cd7-a306-787796e3f121.jpg",
+                            ProductId = 8
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ImageUrl = "\\images\\products\\product-9\\a9b02782-608f-4fd5-8755-72587426b821.jpg",
+                            ProductId = 9
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ImageUrl = "\\images\\products\\product-10\\a382f490-7dbb-4263-8f16-e91d22a93ef8.jpg",
+                            ProductId = 10
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ImageUrl = "\\images\\products\\product-11\\02158f4d-948e-4607-bb61-50471cf8db88.jpg",
+                            ProductId = 11
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ImageUrl = "\\images\\products\\product-11\\b3a473c4-ce62-465b-b0c3-5ed07beecb9a.jpg",
+                            ProductId = 11
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ImageUrl = "\\images\\products\\product-12\\d42e9622-f818-41b7-aace-6376bc4cd45e.jpg",
+                            ProductId = 12
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ImageUrl = "\\images\\products\\product-13\\08827ed0-77bb-463e-b686-bedac13652da.webp",
+                            ProductId = 13
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ImageUrl = "\\images\\products\\product-14\\7f04f2b2-9687-486b-9eb6-f25045dd8d17.jpg",
+                            ProductId = 14
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ImageUrl = "\\images\\products\\product-16\\8c6fef26-af51-4f65-89e0-8b64897289fc.jpg",
+                            ProductId = 16
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ImageUrl = "\\images\\products\\product-17\\f356745b-ce54-463b-8651-4c9daa922567.jpg",
+                            ProductId = 17
+                        });
                 });
 
             modelBuilder.Entity("AmazingBooks.Models.ShoppingCart", b =>

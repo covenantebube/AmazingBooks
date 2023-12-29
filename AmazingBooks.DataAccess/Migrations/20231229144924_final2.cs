@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AmazingBooks.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class final : Migration
+    public partial class final2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -345,9 +345,9 @@ namespace AmazingBooks.DataAccess.Migrations
                 columns: new[] { "Id", "DisplayOrder", "Name" },
                 values: new object[,]
                 {
-                    { 1, 1, "Action" },
-                    { 2, 2, "SciFi" },
-                    { 3, 3, "History" }
+                    { 1, 1, "Fiction" },
+                    { 2, 2, "Self Help" },
+                    { 3, 3, "Science" }
                 });
 
             migrationBuilder.InsertData(
@@ -365,12 +365,46 @@ namespace AmazingBooks.DataAccess.Migrations
                 columns: new[] { "Id", "Author", "CategoryId", "Description", "ISBN", "ListPrice", "Price", "Price100", "Price50", "Title" },
                 values: new object[,]
                 {
-                    { 1, "Billy Spark", 1, "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ", "SWD9999001", 99.0, 90.0, 80.0, 85.0, "Fortune of Time" },
-                    { 2, "Nancy Hoover", 1, "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ", "CAW777777701", 40.0, 30.0, 20.0, 25.0, "Dark Skies" },
-                    { 3, "Julian Button", 1, "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ", "RITO5555501", 55.0, 50.0, 35.0, 40.0, "Vanish in the Sunset" },
-                    { 4, "Abby Muscles", 2, "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ", "WS3333333301", 70.0, 65.0, 55.0, 60.0, "Cotton Candy" },
-                    { 5, "Ron Parker", 2, "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ", "SOTJ1111111101", 30.0, 27.0, 20.0, 25.0, "Rock in the Ocean" },
-                    { 6, "Laura Phantom", 3, "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ", "FOT000000001", 25.0, 23.0, 20.0, 22.0, "Leaves and Wonders" }
+                    { 1, "Chimamanda Ngozi Adichie", 1, "Purple Hibiscus' by Chimamanda Ngozi Adichie follows the lives of Kambili and her brother Jaja in privileged yet oppressive Nigeria. Sheltered by their fanatically religious father, they escape to their aunt during a military coup, discovering a world beyond their father's control. The novel explores adolescence, family bonds, and the pursuit of freedom amidst political turmoil. Adichie's poignant narrative unveils the silent struggles behind their seemingly perfect life, emphasizing the strength needed to confront familial tensions and embrace newfound possibilities. 'Purple Hibiscus' is a powerful exploration of resilience and liberation in the face of familial oppression.", "9781616202415", 99.0, 90.0, 80.0, 85.0, "Purple Hibiscus" },
+                    { 2, "Chinua Achebe", 1, "\"Things Fall Apart\" by Chinua Achebe is a classic novel that explores the impact of colonialism on traditional African societies. Through the story of Okonkwo, a proud Igbo warrior, Achebe vividly portrays the cultural clash and the devastating consequences of European influence. This compelling narrative reflects on the complexities of change, tradition, and the resilience of the human spirit.", "9780385474542", 22.989999999999998, 19.989999999999998, 17.989999999999998, 18.989999999999998, "Things Fall Apart" },
+                    { 3, "Stephen Hawking", 3, "<p>A Brief History of Time\" by Stephen Hawking is a groundbreaking exploration of the universe, delving into complex scientific concepts with clarity and wit. From the Big Bang to black holes, Hawking takes readers on a journey through the cosmos, unraveling the mysteries of space and time. This science classic continues to captivate audiences, offering a profound understanding of the universe and our place within it.</p>", "9780553380163", 24.949999999999999, 21.989999999999998, 19.989999999999998, 20.989999999999998, "A Brief History of Time" },
+                    { 4, "Harper Lee", 1, "<p>\"To Kill a Mockingbird\" by Harper Lee is a timeless work of fiction that explores issues of racial injustice and moral growth in the American South. Set during the Great Depression, the novel follows the coming-of-age story of Scout Finch as her father, Atticus Finch, defends an innocent black man accused of rape. Lee's masterpiece is a powerful narrative that addresses themes of compassion, empathy, and the complexities of human nature.</p>", "9780061120084", 17.989999999999998, 15.99, 13.99, 14.99, "To Kill a Mockingbird" },
+                    { 5, "Carol S. Dweck", 2, "<p>\"Mindset: The New Psychology of Success\" by Carol S. Dweck explores the power of mindset in shaping success. Dweck introduces the concepts of fixed and growth mindsets, illustrating how beliefs about one's abilities impact achievement. Filled with research and anecdotes, this self-help classic provides insights into fostering resilience, learning, and achieving one's full potential.</p>", "9780345472328", 16.989999999999998, 14.99, 12.99, 13.99, "Mindset" },
+                    { 6, "James Clear", 2, "<p>\"Atomic Habits\" by James Clear is a transformative guide to building good habits and breaking bad ones. Clear delves into the science of habits, offering practical strategies to make tiny changes that lead to remarkable results. This self-help bestseller empowers readers to understand the mechanics of behavior and cultivate habits that align with their goals, leading to positive, lasting change.</p>", "9780735211292", 27.0, 23.989999999999998, 21.989999999999998, 22.989999999999998, "Atomic Habits" },
+                    { 7, "James D. Watson", 3, "<p>\"The Double Helix\" by James D. Watson is a riveting account of the discovery of the structure of DNA. Watson, alongside Francis Crick and Maurice Wilkins, unravels the mystery of the double helix, marking a pivotal moment in the history of science. This groundbreaking work provides insights into the competitive and collaborative nature of scientific discovery.</p>", "9780743216302", 18.949999999999999, 16.989999999999998, 14.99, 15.99, "The Double Helix" },
+                    { 8, "J.D. Salinger", 1, "<p>\"The Catcher in the Rye\" by J.D. Salinger is a classic novel narrated by Holden Caulfield, a disenchanted teenager navigating the complexities of adolescence. The story provides a poignant exploration of alienation, identity, and societal expectations, making it a timeless coming-of-age tale.</p>", "9780241950425", 19.989999999999998, 17.989999999999998, 15.99, 16.989999999999998, "The Catcher in the Rye" },
+                    { 9, "Jen Sincero", 2, "<p>\"You Are a Badass\" by Jen Sincero is a motivational self-help book that encourages readers to embrace their inner awesomeness and live life to the fullest. With humor and practical advice, Sincero inspires personal development and empowers individuals to overcome challenges and achieve their goals.</p>", "9780762447695", 21.949999999999999, 19.989999999999998, 17.989999999999998, 18.989999999999998, "You Are a Badass" },
+                    { 10, "Yuval Noah Harari", 3, "<p>\"Sapiens: A Brief History of Humankind\" by Yuval Noah Harari provides a compelling overview of the evolution of Homo sapiens. Harari explores the cognitive, agricultural, and scientific revolutions, offering insights into the collective journey of humanity.</p>", "9780062316110", 24.989999999999998, 21.989999999999998, 19.989999999999998, 20.989999999999998, "Sapiens" },
+                    { 11, "George Orwell", 1, "<p>\"1984\" by George Orwell is a dystopian novel that explores the consequences of a totalitarian society. Orwell's portrayal of a surveillance state and the suppression of individuality remains a powerful commentary on political control and the impact of propaganda.</p>", "9780451524935", 16.989999999999998, 14.99, 12.99, 13.99, "1984" },
+                    { 12, "Eckhart Tolle", 2, "<p>\"The Power of Now\" by Eckhart Tolle is a spiritual guide that emphasizes the importance of living in the present moment. Tolle explores the concept of mindfulness and offers practical teachings to achieve inner peace and enlightenment.</p>", "9781577314806", 23.0, 19.989999999999998, 17.989999999999998, 18.989999999999998, "The Power of Now" },
+                    { 13, "Carl Sagan", 3, "<p>\"Cosmos\" by Carl Sagan is a captivating exploration of the universe. Sagan combines science and philosophy to convey the wonders of space and the significance of human exploration. This classic work continues to inspire awe and curiosity about the cosmos.</p>", "9780345539434", 30.0, 26.989999999999998, 24.989999999999998, 25.989999999999998, "Cosmos" },
+                    { 14, "J.R.R. Tolkien", 1, "<p>\"The Lord of the Rings\" by J.R.R. Tolkien is an epic fantasy trilogy that follows the journey of Frodo Baggins to destroy the One Ring. Tolkien's rich world-building and intricate storytelling have made this series a literary masterpiece and a beloved classic.</p>", "9780618640157", 45.0, 39.990000000000002, 37.990000000000002, 38.990000000000002, "The Lord of the Rings" },
+                    { 16, "Richard Dawkins", 3, "<p>\"The Selfish Gene\" by Richard Dawkins explores the gene's-eye view of evolution, presenting a groundbreaking perspective on natural selection. Dawkins elucidates the concept of genes as replicators, shaping the behavior of living organisms in the struggle for survival.</p>", "9780198788607", 19.949999999999999, 17.989999999999998, 15.99, 16.989999999999998, "The Selfish Gene" },
+                    { 17, "Jane Austen", 1, "<p>\"Pride and Prejudice\" by Jane Austen is a classic novel that explores themes of love, class, and societal expectations. Austen's witty commentary and engaging characters make this timeless work a cornerstone of English literature.</p>", "9780141439518", 18.0, 15.99, 13.99, 14.99, "Pride and Prejudice" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductImages",
+                columns: new[] { "Id", "ImageUrl", "ProductId" },
+                values: new object[,]
+                {
+                    { 1, "\\images\\products\\product-1\\d52714a8-c5f1-437d-b7da-27ea6fe65fdb.webp", 1 },
+                    { 2, "\\images\\products\\product-2\\96e9e1f1-1b0e-4fb9-8743-0c722a68027a.webp", 2 },
+                    { 3, "\\images\\products\\product-3\\d4fe26be-0d50-4975-9cfd-deec5040797c.jpg", 3 },
+                    { 4, "\\images\\products\\product-4\\66fb28ad-0d50-4820-93c2-eeed6aefbca4.jpg", 4 },
+                    { 5, "\\images\\products\\product-5\\352fc0f4-76a8-4d33-9ee4-cd4d0056405a.jpg", 5 },
+                    { 6, "\\images\\products\\product-6\\aebed5b4-6f74-4341-834c-7f19246ce03c.webp", 6 },
+                    { 7, "\\images\\products\\product-7\\72b10554-9bc2-44d5-9b78-01958746f6ec.jpg", 7 },
+                    { 8, "\\images\\products\\product-8\\115fc1c8-bb4c-4cd7-a306-787796e3f121.jpg", 8 },
+                    { 9, "\\images\\products\\product-9\\a9b02782-608f-4fd5-8755-72587426b821.jpg", 9 },
+                    { 10, "\\images\\products\\product-10\\a382f490-7dbb-4263-8f16-e91d22a93ef8.jpg", 10 },
+                    { 11, "\\images\\products\\product-11\\02158f4d-948e-4607-bb61-50471cf8db88.jpg", 11 },
+                    { 12, "\\images\\products\\product-11\\b3a473c4-ce62-465b-b0c3-5ed07beecb9a.jpg", 11 },
+                    { 13, "\\images\\products\\product-12\\d42e9622-f818-41b7-aace-6376bc4cd45e.jpg", 12 },
+                    { 14, "\\images\\products\\product-13\\08827ed0-77bb-463e-b686-bedac13652da.webp", 13 },
+                    { 15, "\\images\\products\\product-14\\7f04f2b2-9687-486b-9eb6-f25045dd8d17.jpg", 14 },
+                    { 16, "\\images\\products\\product-16\\8c6fef26-af51-4f65-89e0-8b64897289fc.jpg", 16 },
+                    { 17, "\\images\\products\\product-17\\f356745b-ce54-463b-8651-4c9daa922567.jpg", 17 }
                 });
 
             migrationBuilder.CreateIndex(
